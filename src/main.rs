@@ -41,8 +41,9 @@ fn main() -> Result<(), String> {
         }
 
         frame_count += 1;
-        if frame_count % 10 == 0 {
+        if frame_count % 5 == 0 {
             game_context.update();
+            frame_count = 0;
         }
 
         renderer.draw(&game_context)?;

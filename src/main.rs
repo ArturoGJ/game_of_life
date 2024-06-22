@@ -9,8 +9,8 @@ use renderer::Renderer;
 extern crate rand;
 extern crate sdl2;
 
-const GRID_X_SIZE: i32 = 80;
-const GRID_Y_SIZE: i32 = 80;
+const GRID_X_SIZE: i32 = 300;
+const GRID_Y_SIZE: i32 = 200;
 const DOT_SIZE_IN_PXS: i32 = 5;
 
 fn main() -> Result<(), String> {

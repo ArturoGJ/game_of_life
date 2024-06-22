@@ -2,7 +2,7 @@ use rand::{thread_rng, Rng};
 
 use crate::{GRID_X_SIZE, GRID_Y_SIZE};
 
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CellState {
     Dead,
     Alive,
@@ -71,11 +71,7 @@ impl GameContext {
         let row_end = if i < board.len() - 1 { i + 2 } else { i };
         let col_start = if j > 0 { j - 1 } else { j };
         let col_end = if j < board[i].len() - 1 { j + 2 } else { j };
-        let is_alive = if let CellState::Alive = board[i][j] {
-            true
-        } else {
-            false
-        };
+        let is_alive = board[i][j] == CellState::Alive;
 
         for i in row_start..row_end {
             for j in col_start..col_end {

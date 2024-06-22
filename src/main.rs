@@ -40,14 +40,12 @@ fn main() -> Result<(), String> {
             }
         }
 
-        // Update
         frame_count += 1;
         if frame_count % 10 == 0 {
             game_context.update();
         }
 
         renderer.draw(&game_context)?;
-
 
         // We wait until the next loop, in this case it means we wait one
         // thirtieth of a second for each frame, which means that we process

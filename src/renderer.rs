@@ -21,8 +21,8 @@ impl Renderer {
                 if let CellState::Alive = cell {
                     self.canvas.set_draw_color(Color::BLACK);
                     self.canvas.fill_rect(Rect::new(
-                        i as i32 * DOT_SIZE_IN_PXS,
                         j as i32 * DOT_SIZE_IN_PXS,
+                        i as i32 * DOT_SIZE_IN_PXS,
                         DOT_SIZE_IN_PXS as u32,
                         DOT_SIZE_IN_PXS as u32,
                     ))?;

@@ -38,7 +38,7 @@ impl GameContext {
         for (i, row) in self.board.iter().enumerate() {
             for (j, cell) in row.iter().enumerate() {
                 new_board[i][j] = *cell;
-                let neighbors = GameContext::get_alive_neighbors(i, j, &self.board);
+                let neighbors = GameContext::get_alive_neighbors_count(i, j, &self.board);
                 match cell {
                     CellState::Dead => {
                         if neighbors == 3 {
@@ -61,7 +61,7 @@ impl GameContext {
         [[CellState::Dead; GRID_X_SIZE as usize]; GRID_Y_SIZE as usize]
     }
 
-    fn get_alive_neighbors(
+    fn get_alive_neighbors_count(
         i: usize,
         j: usize,
         board: &[[CellState; GRID_X_SIZE as usize]; GRID_Y_SIZE as usize],
